@@ -1,0 +1,20 @@
+[
+    {
+        "userName": "teju.118@gmail.com",
+        "password": "teja123",
+        "prodName": "ZARA COAT 3",
+        "couponText": "* Coupon Applied",
+        "fullCountryName": "India",
+        "countryVal": "ind",
+        "msg": " Thankyou for the order. "
+    },
+    {
+        "userName": "teju.118@gmail.com",
+        "password": "teja123",
+        "prodName": "ADIDAS ORIGINAL",
+        "couponText": "* Coupon Applied",
+        "fullCountryName": "India",
+        "countryVal": "ind",
+        "msg": " Thankyou for the order. "
+    }
+]

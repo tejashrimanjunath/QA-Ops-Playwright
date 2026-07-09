@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6843","Browser Context Playwright Test","","2026-07-04","passed","2026-07-04","","UIBasicstest.spec.js","",""
+"","7356","Child Window","","2026-07-04","passed","2026-07-04","","UIBasicstest.spec.js","",""
+"","5337","UI Controls","","2026-07-04","passed","2026-07-04","","UIBasicstest.spec.js","",""
+"","2453","Page Playwright Test","","2026-07-04","passed","2026-07-04","","UIBasicstest.spec.js","",""
+"","10","My own Hello World Test","","2026-07-04","passed","2026-07-04","","UIBasicstest.spec.js","",""
+"","12589","Screenshots and Visual Compares","","2026-07-04","failed","2026-07-04","","UIBasicstest.spec.js","",""
+"","21287","Additional Functions for Browser Navigations","","2026-07-04","broken","2026-07-04","","UIBasicstest.spec.js","",""
