@@ -188,7 +188,6 @@ test("Additional Functions for Browser Navigations", async ({ page }) => {
 
     //move from one page to another (back and forth)
     await page.goto("https://rahulshettyacademy.com/automationPractice/");
-    
     //await page.goto("https:google.com")
     //await page.goForward();
     //await page.goBack();
