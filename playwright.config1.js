@@ -33,7 +33,7 @@ export default defineConfig(
         use: {
           browserName: 'chromium',
           channel: 'msedge',
-          headless: false,
+          headless: true,
           /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
           screenshot: 'on',//'only-on-failure',
           trace: 'on',//'retain-on-failure',//'on' 'off' 'retain-on-failure'
@@ -48,7 +48,7 @@ export default defineConfig(
         name: "chrome",
         use: {
           browserName: 'chromium',
-          headless: false,
+          headless: true,
           /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
           screenshot: 'only-on-failure',//'on' 'off','only-on-failure'
           trace: 'retain-on-failure',//'on' 'off' 'retain-on-failure'

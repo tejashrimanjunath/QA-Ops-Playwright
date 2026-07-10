@@ -7,7 +7,7 @@ Before(async function () {
 
     //Browser context setting for chrome
     const browser = await playwright.chromium.launch({
-        headless: false,
+        headless: true,
     });
     const context = await browser.newContext();
     this.page = await context.newPage();
