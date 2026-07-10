@@ -37,8 +37,8 @@ export default defineConfig(
     //Single test level parameters 
     use: {
       browserName: 'chromium',
-      channel: 'msedge',
-      viewport: { width: 1920, height: 1080 },
+      //channel: 'msedge',
+      //viewport: { width: 1920, height: 1080 },
       headless: true,
       /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
       screenshot: 'only-on-failure',
