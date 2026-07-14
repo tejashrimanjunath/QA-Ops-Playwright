@@ -1,28 +1,43 @@
 const { Before, BeforeAll, After, AfterAll, AfterStep, Status } = require('@cucumber/cucumber');
-const { POManager } = require("../../pageobjects/POManager");
 const playwright = require('@playwright/test');
 
-// Synchronous
-Before(async function () {
+let browser;
 
-    //Browser context setting for chrome
-    const browser = await playwright.chromium.launch({
+BeforeAll(async function () {
+    browser = await playwright.chromium.launch({
         headless: true,
     });
-    const context = await browser.newContext();
-    this.page = await context.newPage();
 });
 
-// Synchronous
-After('@foo', function () {
-    // perform some runtime check to decide whether to skip the proceeding scenario
-    console.log("After all scenario's execute, should run only for @foo");
+Before(async function () {
+    const context = await browser.newContext();
+    this.page = await context.newPage();
+    this.context = context;
+});
+
+After(async function () {
+    if (this.context) {
+        await this.context.close();
+        this.context = null;
+    }
+});
+
+After({ tags: '@foo' }, function () {
+    console.log("This hook runs only after scenarios tagged with @foo");
 });
 
 AfterStep(async function ({ result }) {
-    // This hook will be executed after all steps, and take a screenshot on step failure
-    if (result.status === Status.FAILED) {
-        await this.page.screenshot({ path: 'CucumberScreenFailure.png' });
+    if (result.status === Status.FAILED && this.page) {
+        const scenarioName = this.pickle?.name?.replace(/[^a-zA-Z0-9-_]/g, '_') || 'CucumberScreenFailure';
+        const screenshotPath = `${scenarioName}_${Date.now()}.png`;
+        await this.page.screenshot({ path: screenshotPath });
+    }
+});
+
+AfterAll(async function () {
+    if (browser) {
+        await browser.close();
+        browser = null;
     }
 });
 
